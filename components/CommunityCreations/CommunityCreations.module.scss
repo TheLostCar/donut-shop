@@ -1,0 +1,8 @@
+.container {
+    background-color: var(--champagne-pink);
+    padding: 20px 0;
+    & > h2 {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}

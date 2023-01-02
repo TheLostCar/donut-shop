@@ -1,0 +1,131 @@
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 1fr;
+    // grid-template-rows: repeat(12, 1fr);
+    color: var(--bistre);
+
+    background-color: var(--light-cyan);
+}
+
+.a {
+    grid-column: 2 / span 4;
+    // grid-row: 3 / span 7;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+    min-width: 0;
+
+    h1 {
+        font-family: "Great Vibes";
+        font-size: 4em;
+        display: flex;
+        flex-basis: calc(100vh * (2 / 7));
+        flex-basis: calc(100vh * (2 / 12));
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftSideContent {
+        background-color: var(--isabelline);
+        border-radius: 10px;
+        padding: 20px;
+        // flex-basis: calc(100vh * (5 / 7));
+        flex-basis: calc(100vh * (5 / 12));
+        height: 400px;
+    }
+}
+
+.b {
+    // grid-row: 5 / span 5;
+    // grid-row-start: 5;
+    grid-column: 8 / span 4;
+    // grid-row-end: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // gap: 10px;
+    &::before {
+        content: " ";
+        flex-basis: calc(100vh * (2 / 12));
+    }
+    .donutImage {
+        background-color: var(--isabelline);
+        border-radius: 10px;
+        flex-basis: calc(100vh * (4 / 12) - 10px);
+    }
+
+    .bottom {
+        flex-shrink: 0;
+        flex-basis: calc(100vh * (1 / 12));
+        margin-top: 10px;
+
+        position: relative;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        .smallSquare {
+            aspect-ratio: 1 / 1;
+            height: 100%;
+            background-color: var(--isabelline);
+            border-radius: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .a {
+        grid-column: 4 / span 6;
+    }
+
+    .b {
+        &::before {
+            content: unset;
+        }
+
+        grid-column: 4 / span 6;
+        grid-row: 2;
+        .donutImage {
+            margin-top: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .a {
+        grid-column: 3 / span 8;
+    }
+    .b {
+        &::before {
+            content: unset;
+        }
+
+        grid-column: 3 / span 8;
+        grid-row: 2;
+        .donutImage {
+            margin-top: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .a {
+        grid-column: 2 / span 10;
+    }
+    .b {
+        &::before {
+            content: unset;
+        }
+
+        grid-column: 2 / span 10;
+        grid-row: 2;
+        .donutImage {
+            margin-top: 0px;
+        }
+    }
+}

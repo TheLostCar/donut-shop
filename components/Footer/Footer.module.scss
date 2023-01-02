@@ -1,0 +1,111 @@
+.container {
+    display: grid;
+    min-height: 500px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+
+    color: var(--bistre);
+    background-color: var(--champagne-pink);
+}
+
+.callToAction {
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .banner {
+        display: flex;
+        padding: 10px 20px;
+        gap: 20px;
+
+        min-height: 250px;
+        background-color: var(--bistre);
+        border-radius: 0 100px 0 0;
+        color: var(--mint);
+
+        .imageWrapper {
+            background-color: var(--mint);
+            flex-shrink: 0;
+            aspect-ratio: 1 / 1;
+        }
+
+        .bannerText {
+            align-self: center;
+            text-align: center;
+            // font-size: 20px;
+        }
+    }
+}
+
+.nav {
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+
+    .links {
+        display: flex;
+        justify-content: space-around;
+        margin: 40px 0;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            justify-content: center;
+        }
+        li {
+            list-style: none;
+        }
+    }
+
+    .logo {
+        display: flex;
+        position: relative;
+        margin: 20px 0;
+        flex-shrink: 10;
+        flex-grow: 0;
+        height: 200px;
+        flex-basis: 100%;
+    }
+}
+
+.bottomLinks {
+    grid-column: span 12;
+    justify-content: end;
+    padding-bottom: 10px;
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        opacity: 0.7;
+    }
+    li {
+        list-style: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .callToAction {
+        grid-column: span 7;
+    }
+    .nav {
+        grid-column: span 5;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .callToAction {
+        grid-column: span 12;
+        .banner {
+            border-radius: 0;
+        }
+    }
+    .nav {
+        grid-column: span 12;
+        .logo {
+            margin-bottom: 0;
+            flex-basis: 100px;
+        }
+    }
+}
