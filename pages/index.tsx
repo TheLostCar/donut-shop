@@ -7,13 +7,13 @@ import styles from '../styles/Index.module.css';
 
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <DeliciousToEatAndSee />
-      <CommunityCreations />
-      <ClassicDonuts />
-      <Footer />
-    </>
-  )
+    return (
+        <>
+            <Hero />
+            <DeliciousToEatAndSee />
+            <CommunityCreations />
+            <ClassicDonuts />
+            <Footer />
+        </>
+    )
 }
