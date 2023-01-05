@@ -1,4 +1,6 @@
+@use '~@styles/shadows'as *;
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif&display=swap');
+
 :root {
   --bistre: hsl(24deg 53% 17%);
   --liver-organ: hsl(20deg 62% 27%);
@@ -6,11 +8,16 @@
   --gamboge: hsl(38deg 66% 52%);
 
   --isabelline: hsl(48deg 22% 95%);
-  --mint: hsl(167deg  26% 93%);
-  --light-cyan:hsl(168deg 29% 86%);
-  
-  --champagne-pink:hsl(19deg 79% 91%);
+  --mint: hsl(167deg 26% 93%);
 
+  --light-cyan: hsl(168deg 29% 86%);
+  --light-cyan-shadow-color: 169deg 13% 54%;
+  --light-cyan-shadow-low: #{shadow(var(--light-cyan-shadow-color), L)};
+
+  --champagne-pink: hsl(19deg 79% 91%);
+
+  --champagne-pink-shadow-color: 20deg 30% 50%;
+  --champagne-pink-shadow-low: #{shadow(var(--champagne-pink-shadow-color), M)};
 }
 
 html,
@@ -38,12 +45,12 @@ button {
 
 * {
   margin: 0;
-  padding:0;
+  padding: 0;
   line-height: calc(1em + 0.5rem);
   font-family:
-      'Noto Serif',
-      serif;
- 
+    'Noto Serif',
+    serif;
+
 }
 
 a {
@@ -65,4 +72,5 @@ svg {
 #__next {
   height: 100%;
 }
+
 /* stylelint-enable rule */
