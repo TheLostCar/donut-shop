@@ -1,29 +1,29 @@
 import DonutListing from '@components/DonutListing';
+import useClassicDonuts from '@hooks/useClassicDonuts';
+import Image from 'next/image';
 import styles from './ClassicDonuts.module.scss';
 
 const ClassicDonuts = () => {
-
-    const StyledListing = () => (
-        <DonutListing
-            containerClass={styles.listingContainerClass}
-        />)
+    const [donuts] = useClassicDonuts();
 
     return (
         <div className={styles.container}>
             <div className={styles.menu}>
-
-                <StyledListing />
-                <StyledListing />
-
-                <StyledListing />
-                <StyledListing />
-
-                <StyledListing />
-                <StyledListing />
-
-                <StyledListing />
-                <StyledListing />
-
+                {
+                    donuts.map((v) =>
+                        <DonutListing
+                            key={v.id}
+                            containerClass={styles.listingContainerClass}
+                            price={v.price}
+                        >
+                            <Image
+                                src={v.image}
+                                alt={`${v.name} listing for ${v.price}`}
+                                fill
+                            />
+                        </DonutListing>
+                    )
+                }
             </div>
 
             <div className={styles.sidebar}>

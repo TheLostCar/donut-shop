@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import PocketBase from 'pocketbase';
-import { CommunityCreationsRecord } from '@customTypes/pocketbase.types';
+import { DonutRecord } from '@customTypes/pocketbase.types';
 
 type Data = {
-    data: CommunityCreationsRecord[];
+    data: DonutRecord[];
     message?: string;
 }
 
@@ -11,7 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     switch (req.method) {
         case 'GET': {
             const pb = new PocketBase(process.env.POCKETBASE_URL);
-            const result = (await pb.collection('community_creations').getList<CommunityCreationsRecord>(1, 8, {})).items;
+            const result = (await pb.collection('donuts').getList<DonutRecord>(1, 8, {})).items;
+
             return res.status(200).json({ data: result });
         }
         default:

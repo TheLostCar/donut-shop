@@ -8,6 +8,9 @@
 .image {
     aspect-ratio: 1 / 1;
     width: 100%;
+    position: relative;
+    object-fit: contain;
+    box-shadow: var(--light-cyan-shadow-low);
     // height: 300px;
     border-radius: 10px;
     background-color: var(--isabelline);
@@ -23,4 +26,30 @@
     font-size: 15px;
     border-radius: 1000px;
     background-color: var(--liver-organ);
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+
+    .addToCartText {
+        color: transparent;
+    }
+
+    .price {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    &:hover {
+        background-color: var(--gamboge);
+
+        .addToCartText {
+            color: var(--bistre);
+        }
+
+        .price {
+            display: none;
+        }
+    }
+
 }
