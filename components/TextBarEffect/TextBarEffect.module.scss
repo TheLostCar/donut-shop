@@ -1,0 +1,53 @@
+.container {
+    position: relative;
+    animation: none;
+    color: var(--textColor);
+}
+
+@supports (background-clip: text) {
+    .container:hover {
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(90deg, var(--barColor) 5%, var(--hoverColor) 5%);
+        background-position: -100%;
+        animation: gradient .2s linear forwards;
+        background-size: 200%;
+
+    }
+}
+
+@supports not (background-clip: text) {
+    .container:hover {
+        color: var(--hoverColor);
+    }
+}
+
+.container::before {
+    // content: '';
+    position: absolute;
+    background-image: linear-gradient(90deg, var(--barColor) 5%, var(--textColor) 5%);
+    animation: gradient 2s linear infinite;
+    background-position: -100%;
+    width: 100%;
+    height: 100%;
+    background-size: 200%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position-x: 0%;
+        color: transparent;
+        // font-weight: initial;
+    }
+
+    99% {
+        color: transparent;
+        // font-weight: initial;
+    }
+
+    100% {
+        background-position-x: -100%;
+        color: var(--hoverColor);
+        // font-weight: bold;
+    }
+}
