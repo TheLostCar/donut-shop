@@ -17,7 +17,6 @@
     flex-direction: column;
     justify-content: center;
 
-    overflow: hidden;
     min-width: 0;
 
     h1 {
@@ -37,6 +36,7 @@
         // flex-basis: calc(100vh * (5 / 7));
         flex-basis: calc(100vh * (5 / 12));
         height: 400px;
+        box-shadow: var(--light-cyan-shadow-medium);
     }
 }
 
@@ -52,28 +52,47 @@
     // gap: 10px;
     &::before {
         content: " ";
-        flex-basis: calc(100vh * (2 / 12));
+        flex-basis: calc(100vh * (1 / 12));
     }
+
     .donutImage {
+        position: relative;
+        user-select: none;
+        overflow: hidden;
         background-color: var(--isabelline);
         border-radius: 10px;
-        flex-basis: calc(100vh * (4 / 12) - 10px);
+        flex-basis: calc(100vh * (5 / 12) - 20px);
+        box-shadow: var(--light-cyan-shadow-medium);
+
+        img {
+            object-fit: cover;
+        }
     }
 
     .bottom {
         flex-shrink: 0;
         flex-basis: calc(100vh * (1 / 12));
-        margin-top: 10px;
+        margin-top: 20px;
 
         position: relative;
         display: flex;
         gap: 10px;
         justify-content: center;
+
         .smallSquare {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            cursor: pointer;
             aspect-ratio: 1 / 1;
             height: 100%;
             background-color: var(--isabelline);
             border-radius: 10px;
+            box-shadow: var(--light-cyan-shadow-low);
+
+            img {
+                object-fit: cover;
+            }
         }
     }
 }
@@ -90,6 +109,7 @@
 
         grid-column: 4 / span 6;
         grid-row: 2;
+
         .donutImage {
             margin-top: 0px;
         }
@@ -100,6 +120,7 @@
     .a {
         grid-column: 3 / span 8;
     }
+
     .b {
         &::before {
             content: unset;
@@ -107,6 +128,7 @@
 
         grid-column: 3 / span 8;
         grid-row: 2;
+
         .donutImage {
             margin-top: 0px;
         }
@@ -117,6 +139,7 @@
     .a {
         grid-column: 2 / span 10;
     }
+
     .b {
         &::before {
             content: unset;
@@ -124,6 +147,7 @@
 
         grid-column: 2 / span 10;
         grid-row: 2;
+
         .donutImage {
             margin-top: 0px;
         }

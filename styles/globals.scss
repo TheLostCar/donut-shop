@@ -14,6 +14,7 @@
   --light-cyan: hsl(168deg 29% 86%);
   --light-cyan-shadow-color: 169deg 13% 54%;
   --light-cyan-shadow-low: #{shadow(var(--light-cyan-shadow-color), L)};
+  --light-cyan-shadow-medium: #{shadow(var(--light-cyan-shadow-color), M)};
 
   --champagne-pink: hsl(19deg 79% 91%);
 

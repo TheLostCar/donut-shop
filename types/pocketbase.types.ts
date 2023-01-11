@@ -15,3 +15,9 @@ export type DonutRecord = {
     description: string;
     image: string;
 }
+
+export type BannerRecord = {
+    id: string;
+    name: string;
+    image: string;
+}
