@@ -24,7 +24,7 @@
         border-radius: 0 100px 0 0;
         color: var(--mint);
 
-        .imageWrapper {
+        .bannerImageWrapper {
             background-color: var(--mint);
             flex-shrink: 0;
             aspect-ratio: 1 / 1;
@@ -54,6 +54,7 @@
             // align-items: center;
             justify-content: center;
         }
+
         li {
             list-style: none;
         }
@@ -80,6 +81,7 @@
         justify-content: space-evenly;
         opacity: 0.7;
     }
+
     li {
         list-style: none;
     }
@@ -89,6 +91,7 @@
     .callToAction {
         grid-column: span 7;
     }
+
     .nav {
         grid-column: span 5;
     }
@@ -97,15 +100,24 @@
 @media screen and (max-width: 1000px) {
     .callToAction {
         grid-column: span 12;
+
         .banner {
             border-radius: 0;
         }
     }
+
     .nav {
         grid-column: span 12;
+
         .logo {
             margin-bottom: 0;
             flex-basis: 100px;
         }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .bannerImageWrapper {
+        display: none;
     }
 }

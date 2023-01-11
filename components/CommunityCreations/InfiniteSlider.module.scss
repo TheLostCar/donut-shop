@@ -1,13 +1,11 @@
-$animationDuration: 330s;
+$animationDuration: 60s;
 $firstAnimationDelay: calc($animationDuration / -2);
 // $secondAnimationDelay: calc(($animationDuration / 2) - $firstAnimationDelay);
 $secondAnimationDelay: 0s;
 
 .container {
     position: relative;
-    // overflow: hidden;
-    // overflow-x: hidden;
-    // height: 100px;
+    overflow-x: clip;
 }
 
 @keyframes slider {
@@ -41,16 +39,10 @@ $secondAnimationDelay: 0s;
     animation-iteration-count: infinite;
 
     &>div {
-        // background-color: blue;
-        // border-radius: 10px;
         margin: 0 100px;
     }
 }
 
 .second {
     animation-delay: $secondAnimationDelay;
-
-    &>div {
-        // background-color: green;
-    }
 }

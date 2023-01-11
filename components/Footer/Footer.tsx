@@ -8,7 +8,7 @@ const Footer = () => {
 
                 <div className={styles.banner}>
 
-                    <div className={styles.imageWrapper}></div>
+                    <div className={styles.bannerImageWrapper}></div>
 
                     <div className={styles.bannerText}>
                         <h2>Save money and Earn rewards by downloading our free app</h2>

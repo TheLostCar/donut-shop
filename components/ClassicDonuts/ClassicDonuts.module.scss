@@ -23,22 +23,33 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 20px;
+
     // margin-left: 20px/;
     .textWrapper {
         padding: 20px;
+
         h2 {
             text-align: center;
             margin-bottom: 20px;
         }
     }
+
     .buttonWrapper {
         display: flex;
         justify-content: center;
+
         button {
             padding: 10px;
             color: var(--bistre);
             background-color: var(--gamboge);
             border-radius: 1000px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--mint);
+            // border: 1px solid white;
+            color: white;
         }
     }
 }
@@ -72,6 +83,7 @@
         order: -1;
         grid-column: span 12;
     }
+
     .menu {
         grid-column: span 12;
     }
